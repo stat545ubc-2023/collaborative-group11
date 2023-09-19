@@ -7,27 +7,30 @@ Each of our group member will work on the specific tasks in the corresponding br
    - Work on TEAMWORK.md
    - Work on README file
    - Fixed errors in the troubleshooting-1.rmd file
+   - Work on 2 markdown features
     
   **@zhmmubc20** (Mingming Zhang) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
+   - Work on 1 markdown feature
    - waited to be filled
   
   **@danahalay** (Dana Halay) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
+   - Work on 1 markdown features
    - waited to be filled
 
   **@danierob** (Daniel Robinson) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
+   - Work on 1 markdown features
    - waited to be filled
 
   **Our remaining tasks:**
-   - markdown features (Exercise 2)
    - Merge pull request (Exercise 3)
    - Please check if I miss something :)
 
