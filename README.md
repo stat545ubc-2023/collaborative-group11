@@ -12,7 +12,7 @@
     
 ## Files in the Project
   * #### README file ####
-      * README file provides the project overview
+      * README file provides the project overview and gives an insight of all the files in the project as well as the way of running code in the folder at a high level.
         
   * #### TEAMWORK.md ####
       * TEAMWORK.md file is a team contract. It contains each group member's main tasks for this milestone. More specifically, it specifies the division of labor, expected deadline, and communication methods for this project milestone.
@@ -20,4 +20,5 @@
   * #### troubleshooting-1.Rmd ####
       * This is a document that needs troubleshooting. In total, 3 errors are needed to be fixed.
         
-## How can they run code that appears in your folder / GitHub repository? Again, at a high level.
+## How to Run Code in the Folder
+
