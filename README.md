@@ -21,4 +21,14 @@
       * This is a document that needs troubleshooting. In total, 3 errors are needed to be fixed.
         
 ## How to Run Code in the Folder
-
+  * Open RStudio 
+  * Click "File" in the upper lefthand corner 
+  * Click "New Project"
+  * Click "Version Control"
+  * Click "Git"
+  * Paste the Repository URL for the code you would like to run into the "Repository URL" box 
+    * For example, here is the [Link for Our GitHub Repository](https://github.com/stat545ubc-2023/collaborative-group11) 
+  * Click "Create Project"
+  * Under the "Files" tab you can select whichever file of code you would like to run
+    * For example you can select the "TEAMWORK.md" file 
+  * You can now run our code in RStudio! 
