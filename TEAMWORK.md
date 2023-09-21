@@ -8,31 +8,32 @@ Each of our group member will work on the specific tasks in the corresponding br
    - Work on README file
    - Fixed errors in the troubleshooting-1.rmd file
    - Work on 2 markdown features
+   - Generate pull requests
+   - Review Daniel's pull request and write the comments
     
   **@zhmmubc20** (Mingming Zhang) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
    - Work on 1 markdown feature
-   - waited to be filled
+   - Generate pull requests
+   - Review Weiya's pull request and write comments
   
   **@danahalay** (Dana Halay) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
    - Work on 1 markdown features
-   - waited to be filled
+   - Generate pull requests
+   - Review Ming's pull request and write comments
 
   **@danierob** (Daniel Robinson) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
    - Work on 1 markdown features
-   - waited to be filled
-
-  **Our remaining tasks:**
-   - Merge pull request (Exercise 3)
-   - Please check if I miss something :)
+   - Generate pull requests
+   - Review Dana's pull request and write comments
 
 ## Timing
 In order to prevent last-minute submission, we have set the deadline for submitting the pull request to be at least one day before the real deadline. This can make sure that other team members have sufficient time to provide feedback on the work. 
