@@ -1,7 +1,7 @@
 ## Division of Labour
 _Each of our group members will work on the specific tasks in the corresponding branches and merge them into the main branch once finished._
 
-  **@Weiya818** (Weiya Zhu) Tasks: 
+  **@Weiya818** ✨ (Weiya Zhu) Tasks: 
    - Create Group11 repository and send invitations to other group members
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
@@ -11,7 +11,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Generate pull requests
    - Review Daniel's pull request and write the comments
     
-  **@zhmmubc20** (Mingming Zhang) Tasks:
+  **@zhmmubc20** 🐱 (Mingming Zhang) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
@@ -19,7 +19,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Generate pull requests
    - Review Weiya's pull request and write comments
   
-  **@danahalay** (Dana Halay) Tasks:
+  **@danahalay** 🐢 (Dana Halay) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
@@ -27,11 +27,11 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Generate pull requests
    - Review Ming's pull request and write comments
 
-  **@danierob** (Daniel Robinson) Tasks:
+  **@danierob** 🦃 (Daniel Robinson) Tasks:
    - Github issue self-introduction and replies
    - Work on TEAMWORK.md
    - Work on README file
-   - Work on 1 markdown features __(Image)__
+   - Work on 1 markdown features __(Emoji)__
    - Generate pull requests
    - Review Dana's pull request and write comments
    - Submitting this milestone: tag release and add link on Canvas
