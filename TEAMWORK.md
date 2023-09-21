@@ -14,7 +14,7 @@ Each of our group member will work on the specific tasks in the corresponding br
    - Work on TEAMWORK.md
    - Work on README file
    - Work on 1 markdown feature
-   - review and check markdown features in TEAMWORK and edit them
+   - waited to be filled
   
   **@danahalay** (Dana Halay) Tasks:
    - Github issue self-introduction and replies
