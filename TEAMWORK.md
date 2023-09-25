@@ -9,7 +9,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Fixed errors in the troubleshooting-1.Rmd file
    - Work on 2 markdown features __(HEADERS, LISTS)__
    - Generate pull requests
-   - Review Daniel's pull request and write the comments
+   - Review Daniel's pull request and write the comments for both M1 and M2
     
   **@zhmmubc20** 🐱 (Mingming Zhang) Tasks:
    - Github issue self-introduction and replies
@@ -17,7 +17,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Work on README file
    - Work on 1 markdown feature __(Emphasis)__
    - Generate pull requests
-   - Review Weiya's pull request and write comments
+   - Review Weiya's pull request and write comments for both M1 and M2
   
   **@danahalay** 🐢 (Dana Halay) Tasks:
    - Github issue self-introduction and replies
@@ -25,7 +25,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Work on README file
    - Work on 1 markdown features __(Links)__
    - Generate pull requests
-   - Review Ming's pull request and write comments
+   - Review Ming's pull request and write comments for both M1 and M2
 
   **@danierob** 🦃 (Daniel Robinson) Tasks:
    - Github issue self-introduction and replies
@@ -33,8 +33,8 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Work on README file
    - Work on 1 markdown features __(Emoji)__
    - Generate pull requests
-   - Review Dana's pull request and write comments
-   - Submitting this milestone: tag release and add link on Canvas
+   - Review Dana's pull request and write comments for both M1 and M2
+   - Submitting this milestone: tag release and add link on Canvas for both M1 and M2
 
 ## Timing
 In order to prevent last-minute submission, we have set the deadline for submitting the pull request to be at least one day before the real deadline. This can make sure that other team members have sufficient time to provide feedback on the work. 
