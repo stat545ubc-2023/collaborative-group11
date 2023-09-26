@@ -40,6 +40,7 @@ _Each of our group members will work on the specific tasks in the corresponding 
    - Review Dana's pull request and write comments for both M1 and M2
    - Submitting M1: tag release and add link on Canvas
    - Added to duties and teamwork file
+   - Learning github on R 
 
 ## Timing
 In order to prevent last-minute submission, we have set the deadline for submitting the pull request to be at least one day before the real deadline. This can make sure that other team members have sufficient time to provide feedback on the work. 
