@@ -21,7 +21,7 @@
       * This is a document that needs troubleshooting. In total, 3 errors are needed to be fixed.
    
   * #### troubleshooting-2.Rmd ####
-      * This is a document that needs troubleshooting. In total, there are 11 errors are needed to be fixed.
+      * This is a document that needs troubleshooting. In total, 11 errors are needed to be fixed.
         
 ## How to Run Code in the Folder
   * Open RStudio 
