@@ -27,13 +27,20 @@ required packages.
 ### ERROR HERE ###
 ## the following lines of code is for installing corresponding packages
 options(repos = c(CRAN = "https://mirror.rcg.sfu.ca/mirror/CRAN/"))
-##install.packages("dslabs")
+install.packages("dslabs")
+```
+
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpcEoSQF/downloaded_packages
+
+``` r
 install.packages("conflicted")
 ```
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpCbM5Cj/downloaded_packages
+    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpcEoSQF/downloaded_packages
 
 ``` r
 library(conflicted)

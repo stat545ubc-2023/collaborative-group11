@@ -19,7 +19,7 @@ Note that errors are not all syntactic (i.e., broken code)! Some are logical err
 ### ERROR HERE ###
 ## the following lines of code is for installing corresponding packages
 options(repos = c(CRAN = "https://mirror.rcg.sfu.ca/mirror/CRAN/"))
-##install.packages("dslabs")
+install.packages("dslabs")
 install.packages("conflicted")
 library(conflicted)
 conflict_prefer("filter", winner = "dplyr")
