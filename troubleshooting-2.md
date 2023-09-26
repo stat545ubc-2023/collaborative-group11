@@ -27,13 +27,20 @@ required packages.
 ### ERROR HERE ###
 ## the following lines of code is for installing corresponding packages
 options(repos = c(CRAN = "https://mirror.rcg.sfu.ca/mirror/CRAN/"))
-##install.packages("dslabs")
+install.packages("dslabs")
+```
+
+    ## 
+    ## The downloaded binary packages are in
+    ##  /var/folders/zb/m371tt0d16b_8hxnq07q21dm0000gn/T//RtmpxdGeeb/downloaded_packages
+
+``` r
 install.packages("conflicted")
 ```
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpfLo7qG/downloaded_packages
+    ##  /var/folders/zb/m371tt0d16b_8hxnq07q21dm0000gn/T//RtmpxdGeeb/downloaded_packages
 
 ``` r
 library(conflicted)
@@ -57,11 +64,11 @@ library(tidyverse)
 ```
 
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.3     ✔ readr     2.1.4
+    ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ## ✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+    ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
     ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ## ✔ purrr     1.0.2
+    ## ✔ purrr     1.0.1
 
 ``` r
 library(stringr)
@@ -417,24 +424,27 @@ respectively.
 ``` r
 ### ERROR HERE ###
 movieLens %>%
-  mutate(min_rating = min(rating), 
+  ## ERROR FIXED: Added the group_by(year) function to meet the described requirement
+  group_by(title) %>%
+  ## Changed mutate() to summarize() function to summarize the min and max rating by year
+  summarize(min_rating = min(rating),  
          max_rating = max(rating))
 ```
 
-    ## # A tibble: 100,004 × 9
-    ##    movie_id title     year genres user_id rating timestamp min_rating max_rating
-    ##       <int> <chr>    <int> <fct>    <int>  <dbl>     <int>      <dbl>      <dbl>
-    ##  1       31 Dangero…  1995 Drama        1    2.5    1.26e9        0.5          5
-    ##  2     1029 Dumbo     1941 Anima…       1    3      1.26e9        0.5          5
-    ##  3     1061 Sleepers  1996 Thril…       1    3      1.26e9        0.5          5
-    ##  4     1129 Escape …  1981 Actio…       1    2      1.26e9        0.5          5
-    ##  5     1172 Cinema …  1989 Drama        1    4      1.26e9        0.5          5
-    ##  6     1263 Deer Hu…  1978 Drama…       1    2      1.26e9        0.5          5
-    ##  7     1287 Ben-Hur   1959 Actio…       1    2      1.26e9        0.5          5
-    ##  8     1293 Gandhi    1982 Drama        1    2      1.26e9        0.5          5
-    ##  9     1339 Dracula…  1992 Fanta…       1    3.5    1.26e9        0.5          5
-    ## 10     1343 Cape Fe…  1991 Thril…       1    2      1.26e9        0.5          5
-    ## # ℹ 99,994 more rows
+    ## # A tibble: 8,832 × 3
+    ##    title                              min_rating max_rating
+    ##    <chr>                                   <dbl>      <dbl>
+    ##  1 "\"Great Performances\" Cats"             0.5        3  
+    ##  2 "$9.99"                                   2.5        4.5
+    ##  3 "'Hellboy': The Seeds of Creation"        2          2  
+    ##  4 "'Neath the Arizona Skies"                0.5        0.5
+    ##  5 "'Round Midnight"                         0.5        4  
+    ##  6 "'Salem's Lot"                            3.5        3.5
+    ##  7 "'Til There Was You"                      0.5        4  
+    ##  8 "'burbs, The"                             1.5        4.5
+    ##  9 "'night Mother"                           5          5  
+    ## 10 "(500) Days of Summer"                    0.5        5  
+    ## # ℹ 8,822 more rows
 
 ## Exercise 5: Scoped variants with `across()`
 
@@ -468,15 +478,32 @@ the missing values:
 ### ERROR HERE ###
 starWars %>%
   group_by(species) %>%
-  summarise(across("height", "mass", function(x) min(x, na.rm=TRUE)))
+  ## ERROR FIXED: We used c() function to feed height and mass as a single vector column in across() function to fix the error.
+  summarise(across(c(height, mass), function(x) min(x, na.rm=TRUE)))
 ```
 
-    ## Error in `summarise()`:
-    ## ℹ In argument: `across("height", "mass", function(x) min(x, na.rm =
-    ##   TRUE))`.
-    ## ℹ In group 1: `species = "Aleena"`.
-    ## Caused by error in `across()`:
-    ## ! `.fns` must be a function, a formula, or a list of functions/formulas.
+    ## Warning: There were 6 warnings in `summarise()`.
+    ## The first warning was:
+    ## ℹ In argument: `across(c(height, mass), function(x) min(x, na.rm = TRUE))`.
+    ## ℹ In group 4: `species = "Chagrian"`.
+    ## Caused by warning in `min()`:
+    ## ! no non-missing arguments to min; returning Inf
+    ## ℹ Run `dplyr::last_dplyr_warnings()` to see the 5 remaining warnings.
+
+    ## # A tibble: 38 × 3
+    ##    species   height  mass
+    ##    <chr>      <int> <dbl>
+    ##  1 Aleena        79    15
+    ##  2 Besalisk     198   102
+    ##  3 Cerean       198    82
+    ##  4 Chagrian     196   Inf
+    ##  5 Clawdite     168    55
+    ##  6 Droid         96    32
+    ##  7 Dug          112    40
+    ##  8 Ewok          88    20
+    ##  9 Geonosian    183    80
+    ## 10 Gungan       196    66
+    ## # ℹ 28 more rows
 
 Note that here R has taken the convention that the minimum value of a
 set of `NA`s is `Inf`.
@@ -493,23 +520,31 @@ Manually create a tibble with 4 columns:
 
 ``` r
 ### ERROR HERE ###
+## ERROR FIXED: syntax error, we added ',' after ~birth_location
+## as well as " " around the values of ~birthday location.
 fakeStarWars <- tribble(
-  ~name,            ~birth_weight,  ~birth_year, ~birth_location
-  "Luke Skywalker",  1.35      ,   1998        ,  Liverpool, England,
-  "C-3PO"         ,  1.80      ,   1999        ,  Liverpool, England,
-  "R2-D2"         ,  2.25      ,   2000        ,  Seattle, WA,
-  "Darth Vader"   ,  2.70      ,   2001        ,  Liverpool, England,
-  "Leia Organa"   ,  3.15      ,   2002        ,  New York, NY,
-  "Owen Lars"     ,  3.60      ,   2003        ,  Seattle, WA,
-  "Beru Whitesun Iars", 4.05   ,   2004        ,  Liverpool, England,
-  "R5-D4"         ,  4.50      ,   2005        ,  New York, NY,
+  ~name,            ~birth_weight,  ~birth_year, ~birth_location,
+  "Luke Skywalker",  1.35      ,   1998        ,  "Liverpool, England",
+  "C-3PO"         ,  1.80      ,   1999        ,  "Liverpool, England",
+  "R2-D2"         ,  2.25      ,   2000        ,  "Seattle, WA",
+  "Darth Vader"   ,  2.70      ,   2001        ,  "Liverpool, England",
+  "Leia Organa"   ,  3.15      ,   2002        ,  "New York, NY",
+  "Owen Lars"     ,  3.60      ,   2003        ,  "Seattle, WA",
+  "Beru Whitesun Iars", 4.05   ,   2004        ,  "Liverpool, England",
+  "R5-D4"         ,  4.50      ,   2005        ,  "New York, NY",
 )
+head(fakeStarWars)
 ```
 
-    ## Error: <text>:4:3: unexpected string constant
-    ## 3:   ~name,            ~birth_weight,  ~birth_year, ~birth_location
-    ## 4:   "Luke Skywalker"
-    ##      ^
+    ## # A tibble: 6 × 4
+    ##   name           birth_weight birth_year birth_location    
+    ##   <chr>                 <dbl>      <dbl> <chr>             
+    ## 1 Luke Skywalker         1.35       1998 Liverpool, England
+    ## 2 C-3PO                  1.8        1999 Liverpool, England
+    ## 3 R2-D2                  2.25       2000 Seattle, WA       
+    ## 4 Darth Vader            2.7        2001 Liverpool, England
+    ## 5 Leia Organa            3.15       2002 New York, NY      
+    ## 6 Owen Lars              3.6        2003 Seattle, WA
 
 ## Attributions
 
