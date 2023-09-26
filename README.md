@@ -40,3 +40,4 @@
   * Open RStudio
   * Follow above steps and select a ".Rmd" file
   * Click "Knit" to generate a ".md" file
+
