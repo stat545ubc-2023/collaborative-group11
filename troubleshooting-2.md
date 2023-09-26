@@ -32,7 +32,7 @@ install.packages("dslabs")
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/zb/m371tt0d16b_8hxnq07q21dm0000gn/T//RtmpxdGeeb/downloaded_packages
+    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpcEoSQF/downloaded_packages
 
 ``` r
 install.packages("conflicted")
@@ -40,7 +40,7 @@ install.packages("conflicted")
 
     ## 
     ## The downloaded binary packages are in
-    ##  /var/folders/zb/m371tt0d16b_8hxnq07q21dm0000gn/T//RtmpxdGeeb/downloaded_packages
+    ##  /var/folders/8j/hvsc33bn3yx9j55rcgnwlsfr0000gn/T//RtmpcEoSQF/downloaded_packages
 
 ``` r
 library(conflicted)
@@ -64,11 +64,11 @@ library(tidyverse)
 ```
 
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+    ## ✔ dplyr     1.1.3     ✔ readr     2.1.4
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+    ## ✔ ggplot2   3.4.3     ✔ tibble    3.2.1
     ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ## ✔ purrr     1.0.1
+    ## ✔ purrr     1.0.2
 
 ``` r
 library(stringr)
@@ -479,16 +479,9 @@ the missing values:
 starWars %>%
   group_by(species) %>%
   ## ERROR FIXED: We used c() function to feed height and mass as a single vector column in across() function to fix the error.
-  summarise(across(c(height, mass), function(x) min(x, na.rm=TRUE)))
+  ##Also,in order to avoid warnings, we added ifelse to check the existence of NA value. If so, return NA; else, we calculate the min
+  summarise(across(c(height, mass), function(x) ifelse(all(is.na(x)), NA, min(x, na.rm = TRUE))))
 ```
-
-    ## Warning: There were 6 warnings in `summarise()`.
-    ## The first warning was:
-    ## ℹ In argument: `across(c(height, mass), function(x) min(x, na.rm = TRUE))`.
-    ## ℹ In group 4: `species = "Chagrian"`.
-    ## Caused by warning in `min()`:
-    ## ! no non-missing arguments to min; returning Inf
-    ## ℹ Run `dplyr::last_dplyr_warnings()` to see the 5 remaining warnings.
 
     ## # A tibble: 38 × 3
     ##    species   height  mass
@@ -496,7 +489,7 @@ starWars %>%
     ##  1 Aleena        79    15
     ##  2 Besalisk     198   102
     ##  3 Cerean       198    82
-    ##  4 Chagrian     196   Inf
+    ##  4 Chagrian     196    NA
     ##  5 Clawdite     168    55
     ##  6 Droid         96    32
     ##  7 Dug          112    40

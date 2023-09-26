@@ -185,7 +185,8 @@ We can find the minimum height and mass within each species, ignoring the missin
 starWars %>%
   group_by(species) %>%
   ## ERROR FIXED: We used c() function to feed height and mass as a single vector column in across() function to fix the error.
-  summarise(across(c(height, mass), function(x) min(x, na.rm=TRUE)))
+  ##Also,in order to avoid warnings, we added ifelse to check the existence of NA value. If so, return NA; else, we calculate the min
+  summarise(across(c(height, mass), function(x) ifelse(all(is.na(x)), NA, min(x, na.rm = TRUE))))
 ```
 
 Note that here R has taken the convention that the minimum value of a set of `NA`s is `Inf`.
